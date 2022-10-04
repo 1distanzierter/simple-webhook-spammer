@@ -1,6 +1,5 @@
 from dhooks import Webhook
-from colorama import Fore#
-import requests
+from colorama import Fore
 
 print(f"""
 {Fore.LIGHTRED_EX}
@@ -39,6 +38,18 @@ if everyone_ping == "y":
         Your_Everyone_Message = "@everyone\n" + Your_Message
         WebhookURL.send(Your_Everyone_Message)
         i += 1
-    input(f"{Fore.LIGHTWHITE_EX}Press enter to exit")
+        print(Fore.LIGHTGREEN_EX + f"Webhook Message succesfully sent! {Fore.LIGHTWHITE_EX}({i})")
+    input(f"{Fore.LIGHTWHITE_EX}Sent succesfully {i} Messages to Webhook({WebhookURL})")
     exit()
+
+else:
+     i = 0
+
+     while i < Amount_Of_Messages:
+        Your_Everyone_Message = Your_Message
+        WebhookURL.send(Your_Everyone_Message)
+        i += 1
+        print(Fore.LIGHTGREEN_EX + f"Webhook Message succesfully sent! {Fore.LIGHTWHITE_EX}({i})")
+     input(f"{Fore.LIGHTWHITE_EX}Sent succesfully {i} Messages to Webhook({WebhookURL})")
+     exit()
 
